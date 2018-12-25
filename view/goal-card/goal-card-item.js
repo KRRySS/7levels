@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {CardItem, Body, Text} from 'native-base';
+import {CardItem, Body, Text, Content, Icon} from 'native-base';
+import { StyleSheet, ProgressViewIOS } from 'react-native';
 
 
 export default class GoalCardItem extends Component {
@@ -9,13 +10,39 @@ export default class GoalCardItem extends Component {
     }
     render() {
         return (
-                    <CardItem>
+                     <CardItem style={styles.cardItemContainder}>
                         <Body>
                             <Text>
+                                {this.props.levelNumber}
+                            </Text>
+                            <Text style={styles.textContainder}>
                                 {this.props.description}
                             </Text>
+                            <Text style={styles.textDateContainder}>
+                                {this.props.goalDate}
+                            </Text>
+                            <ProgressViewIOS progress={this.props.progress} progressViewStyle="bar" progressTintColor="green" trackTintColor="red" style={styles.progressBarContainer}/>
+                            <Icon type="FontAwesome" name="eye" />
                         </Body>
                     </CardItem>
         )
     }
 };
+
+const styles = StyleSheet.create({
+    cardItemContainder: {
+        margin: 10,
+        backgroundColor: '#7fcaa7'
+    },
+    textContainder: {
+      color: 'green',
+      fontWeight: 'bold',
+      fontSize: 30,
+    },
+    textDateContainder: {
+      color: 'black',
+    },
+    progressBarContainer: {
+        width: 300,
+    }
+  });
