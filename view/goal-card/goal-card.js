@@ -12,7 +12,7 @@ export default class GoalCard extends Component {
     render() {
         return (
             <View style={styles.mainContainer}>
-                <Header>
+                <Header style={styles.headerContainer}>
                     <Body>
                         <Title>{this.props.name}</Title>
                     </Body>
@@ -34,16 +34,18 @@ export default class GoalCard extends Component {
 
 const styles = StyleSheet.create({
     mainContainer: {
-        backgroundColor: '#27b466',
     },
     cardContainder: {
-        margin: 10,
+        margin: 2,
+    },
+    headerContainer: {
+        height: 50,
     },
     foterContainer: {
-        backgroundColor: 'orange'
+        backgroundColor: 'orange',
+        margin: 1,
     },
     baseText: {
-        margin: 10,
         textAlign: 'center',
     }
   });

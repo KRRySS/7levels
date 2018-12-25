@@ -31,7 +31,7 @@ export default class GoalCardItem extends Component {
 
 const styles = StyleSheet.create({
     cardItemContainder: {
-        margin: 10,
+        margin: 0.5,
         backgroundColor: '#7fcaa7'
     },
     textContainder: {
